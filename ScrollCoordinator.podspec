@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ScrollCoordinator'
-  s.version          = '1.1.0'
+  s.version          = '1.2.0'
   s.summary          = 'ScrollCoordinator allows you to attach gestures to scrollviews and perform behaviours on these gestures'
 
 
@@ -15,7 +15,7 @@ ScrollCoordinator is an innovative way to make views behave the way you want the
 
   s.ios.deployment_target = '8.0'
   s.source_files = 'ScrollCoordinator/Sources/**/*'
-  s.swift_version = "4.2"
+  s.swift_version = "5.0"
 
 
 end
