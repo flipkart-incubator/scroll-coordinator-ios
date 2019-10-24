@@ -12,6 +12,8 @@ open class NavbarSnapBehaviour: SnapBehaviour {
     
     public init(snapDirection: SnapDirection, navController: UINavigationController, scrollView: UIScrollView, refreshControl: UIRefreshControl?, snapDelegate: SnapDelegate?) {
 
+        self.scrollView = scrollView
+        
         // Set status bar height as start position of nav bar
         let statusBarHeight = ScrollCoordinatorUtils.getStatusBarHeight()
 
