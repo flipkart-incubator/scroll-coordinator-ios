@@ -11,8 +11,13 @@ open class NavbarSnapBehaviour: SnapBehaviour {
     public var scrollView: UIScrollView
     
     public init(snapDirection: SnapDirection, navController: UINavigationController, scrollView: UIScrollView, refreshControl: UIRefreshControl?, snapDelegate: SnapDelegate?) {
+
         self.scrollView = scrollView
-        super.init(snapDirection: snapDirection, view: navController.navigationBar, isFadeEnabled: true, refreshControl: refreshControl, snapDelegate: snapDelegate)
+        
+        // Set status bar height as start position of nav bar
+        let statusBarHeight = ScrollCoordinatorUtils.getStatusBarHeight()
+
+        super.init(snapDirection: snapDirection, view: navController.navigationBar, isFadeEnabled: true, refreshControl: refreshControl, snapDelegate: snapDelegate, startPostion: statusBarHeight)
         
         //Add listener for app coming to foreground
         NotificationCenter.default.addObserver(self, selector: #selector(NavbarSnapBehaviour.applicationWillEnterForeground), name: UIApplication.didBecomeActiveNotification, object: nil)
